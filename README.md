@@ -16,6 +16,5 @@
 3. Logistic Regression: y = 1 / (1 + e^(-z)) where z = wx + b
 
 **Classification Model**:
-1. Binary Classification: 
-2. Multiclass Classification: https://github.com/pravinvarma/tensorflowJS/blob/master/imageClassification.html
-
+1. Binary Classification: https://github.com/pravinvarma/ML/blob/main/horseHuman.ipnyb
+2. Multiclass Classification: https://github.com/pravinvarma/ML/blob/main/load-rps-model.ipynb
