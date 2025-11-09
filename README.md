@@ -22,5 +22,23 @@
     which mean for z= 3 linear value, the sigmoid output is 0.95 which is very close to 1. So the probability of y being 1 is 0.95.</pre>
 
 **Classification Model**:
+Logistics regression tells you probablity in percentage whether a given email is spam or not. Classification tells you whether given email is spam or not instead of predicting the probability.
 1. Binary Classification: https://github.com/pravinvarma/ML/blob/main/horseHuman.ipnyb
 2. Multiclass Classification: https://github.com/pravinvarma/ML/blob/main/load-rps-model.ipynb
+
+If we have probability of a given email to be spam say 0.50 then we need to define some threshhold for the clssification. The threshold then assigned to classes
+
+1. Positive class(email is spam)
+2. Negative class(email is not spam)
+
+Depending on the outcome of classes,  we can have a matrix where columns are truths and rows are predictions which is called as **confusion matrix**.
+
+|  | Actual Positive | Actual Negative |
+| :---         |     :---      |      :--- |
+| **Predicated Positive**  |   TP(spam is predicted correctly as spam   |  TN(not spam email is predicted as spam)  |
+| **Predicted Negative**     |   FP(spam email is predicted as not spam)     | FN(not spam email is correctly predicted as not spam)    |
+
+TP - True positive, the actual outcome is positive and predicated is also positive
+TN - True negative, the actual outcome is negative and predicated is also negative
+FP - False positive, the actual outcome is positive while predicated is negative
+FN - false negative, the actual prediction is negative while predicted is also negative
