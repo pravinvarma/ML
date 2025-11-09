@@ -35,10 +35,11 @@ Depending on the outcome of classes,  we can have a matrix where columns are tru
 
 |  | Actual Positive | Actual Negative |
 | :---         |     :---      |      :--- |
-| **Predicated Positive**  |   TP(spam is predicted correctly as spam   |  TN(not spam email is predicted as spam)  |
-| **Predicted Negative**     |   FP(spam email is predicted as not spam)     | FN(not spam email is correctly predicted as not spam)    |
+| **Predicated Positive**  |   TP(spam is predicted correctly as spam   |  FP(not spam email is predicted as spam)  |
+| **Predicted Negative**     |   FN(spam email is predicted as not spam)     | TN(not spam email is correctly predicted as not spam)    |
 
 TP - True positive, the actual outcome is positive and predicated is also positive
-TN - True negative, the actual outcome is negative and predicated is also negative
 FP - False positive, the actual outcome is positive while predicated is negative
-FN - false negative, the actual prediction is negative while predicted is also negative
+FN - false negative, the actual prediction is positive while predicted is negative
+TN - True negative, the actual outcome is negative and predicated is also negative
+
