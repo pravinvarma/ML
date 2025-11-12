@@ -43,3 +43,23 @@ FP - False positive, the actual outcome is positive while predicated is negative
 FN - false negative, the actual prediction is positive while predicted is negative
 TN - True negative, the actual outcome is negative and predicated is also negative
 
+#### Accuracy, recall and precision,FPR
+
+Suppose Dhanno received 10 emails in her inbox. Out of 10 emails, 2 are correctly identified as spam emails but 2 emails which were not spam identified as spam. So, we have following
+TP(emails identified as spam which were actually spam): 2
+FP(emails which were not actually spam but identified as spam): 2
+So, these two emails falsely identified as spam will become
+FN(emails identified as spam which were not actually spam): 2
+So these becomes total 6. Which mean remaining 4 were TN(not identified as spam)
+
+Formulae:
+1. Accuracy = TP + TN/ TP+TN+FP+FN
+2. recall(True positive rate) = TP/ TP+FN(How many actual span were caught)
+3. precision = TP/TP+FP
+4. FPR = FP/FP+TN(how many not spam emails wrongly flagged)
+
+So, in our example,
+1. Accuracy = 2+4/2+4+2+2=0.5. So the accuracy is 50%
+2. Recall = 2/2+2=0.5, which means model found half of the spam email.
+3. Precision = 2/2+2 = 0.5 which mean half of the spam prediction is correct
+4. FPR = 2/2+4=0.3 which means 33% were wrongly flagged as spam
