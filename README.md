@@ -163,4 +163,92 @@ Shows your model's ability to separate two classes independent of threshold.
 
 Here is visual depiction of the model performance
 
-<img src="model-performance.png" alt="drawing" width="200" align="left"/>
+<img src="model-performance.png" alt="drawing" width="200"/>
+
+---
+
+## Data Preparation and Feature Engineering
+
+### How Data is Fed to the Model
+
+Suppose you have data in the form of a table. This table is called a **dataset**. The columns are **features** and rows represent data points. One row represents one data point.
+
+| # | Bedrooms | Area (sqft) | Age | Price |
+| :-: | :------: | :---------: | :-: | :---: |
+| 1 | 2        | 1200        | 10  | 50L   |
+| 2 | 3        | 1500        | 5   | 70L   |
+| 3 | 2        | 1000        | 15  | 40L   |
+| 4 | 4        | 2000        | 3   | 1Cr   |
+
+### Feature Selection
+
+Suppose you need only two features: **bedrooms** and **area**. You can create a new dataset with only these features. This is called **feature selection**.
+
+Now look at row 3:
+
+| Feature  | Value |
+| :------- | :---: |
+| bedrooms | 2     |
+| area     | 1000  |
+
+### Feature Vector
+
+We can't feed this information directly to the model. We need to convert it into a vector called a **feature vector**:
+
+```
+[2, 1000]
+```
+
+### Feature Engineering
+
+Before feeding data to the model, we need to perform preprocessing. This is called **feature engineering**.
+
+#### 1. Binning
+Convert continuous data to categorical data.
+
+**Example**: Age → bin into:
+- 0–18
+- 19–30
+- 31–45
+- 46–60
+- 60+
+
+#### 2. Bucketing
+Group data into buckets.
+
+**Example**: Income → bucket into:
+- Low
+- Medium
+- High
+
+#### 3. Feature Creation
+Create new features or modify existing features to improve model performance.
+
+**Examples**:
+- Extract year/month/day from a date
+- Create BMI = weight / height²
+
+#### 4. Feature Vector Representation
+Convert features into a numerical vector.
+
+**Example**: For a house:
+```
+[area, bedrooms, age, location_score] = [1200, 3, 10, 0.82]
+```
+
+#### 5. Normalization
+Scale features to a range of 0 to 1.
+
+**Formula**: `x_normalized = (x - x_min) / (x_max - x_min)`
+
+#### 6. Standardization
+Scale features to have a mean of 0 and standard deviation of 1.
+
+**Formula**: `x_standardized = (x - μ) / σ`
+
+Where:
+- `μ` = mean
+- `σ` = standard deviation
+
+---
+
